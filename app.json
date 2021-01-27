@@ -1,0 +1,12 @@
+{
+  "name": "react-native-assignment",
+  "displayName": "react-native-assignment",
+  "expo": {
+    "name": "react-native-assignment",
+    "slug": "react-native-assignment",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
