@@ -15,6 +15,7 @@ class ListItem extends PureComponent {
         this.state = {
             page:1,
             resList:[],
+            favList:[],
             searchQuery: ''
         }
     }
@@ -28,15 +29,17 @@ class ListItem extends PureComponent {
 
     componentDidMount(){
         this.props.getGiphyList(this.state.page)
+        let favList = fetchFav()
+        this.setState({ favList  })
     }
 
     checkandAddFav = (item) => {
-        let favList = fetchFav()
-        if(favList.length === 5){
+        if(this.state.favList.length === 5){
             alert('Maximum 5 Favourite can be allowed')
         }
         else{
             addFav(item)
+            this.forceUpdate();
         }
         
     }
@@ -56,8 +59,8 @@ class ListItem extends PureComponent {
     }
 
     renderGifList = ({item,index}) => {
-        let favList = fetchFav()
-        let isFav = favList.some((fav) => fav.favItem.id === item.id)
+        
+        let isFav = this.state.favList.some((fav) => fav.favItem.id === item.id)
         return(
             <View style={{padding:10,marginBottom:20}}>
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailView',{gif:item})}>
