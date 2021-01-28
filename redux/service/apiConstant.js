@@ -1,0 +1,1 @@
+export const apiBase = 'https://api.giphy.com/v1/gifs/trending?api_key=6GYBA3x8yJhxcLMshRqhFk4V2AN9zeFe'
