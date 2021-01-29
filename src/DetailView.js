@@ -34,6 +34,7 @@ class DetailView extends Component {
         }
         else{
             addFav(this.state.gifObject)
+            this.forceUpdate();
         }
     }
     
